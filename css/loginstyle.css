@@ -1,0 +1,111 @@
+body{
+    background: linear-gradient(rgba(0,0,20,0.5),rgba(0,0,50,0.5)),url(image.jpg);
+    background-size: cover;
+    background-position: center;
+    background-color: black;
+}
+.login-box{
+  max-width: 700px;
+  float: none;
+  margin: 150px auto;
+}
+
+.login-left{
+  background: rgba(211,211,211,0.5);
+  padding: 30px;
+}
+
+.login-right{
+  background: #fff;
+  padding: 30px;
+}
+
+.form-control{
+    background-color: transparent !important;
+}
+
+#vcontainer{
+  float: none;
+  margin-top: 25%;
+}
+
+a{
+  color: #fff !important;
+  margin-top: -200px !important;
+}
+h1{
+  color: #fff !important;
+  text-align: center;
+  margin-top: 200px !important;
+  text-transform: uppercase;
+}
+
+nav{
+  height: 44px;
+  background: transparent;
+}
+
+.menu{
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  overflow: hidden;
+}
+.menu ul{
+  width: 100%;
+  margin: 0;
+  padding-right: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.menu ul li{
+  list-style: none;
+  margin-top: 1%;
+}
+
+.menu ul li a{
+  color: #fff;
+  line-height: 44px;
+  text-decoration: none;
+}
+
+#vcontainer input{
+  border-radius: 10px;
+  background: rgba(211,211,211,0.5);
+  width: 20%;
+  float:right;
+  margin-left: 60%;
+  margin-right: 40%;
+  display: block;
+}
+
+#vcontainer button{
+  border-radius: 10px;
+  background: rgba(211,211,211,0.5);
+  width: 20%;
+  float:right;
+  margin-left: 60%;
+  margin-right: 40%;
+  display: block;
+}
+
+#vcontainer select{
+  border-radius: 10px;
+  background: rgba(211,211,211,0.5);
+  width: 20%;
+  float:right;
+  margin-left: 60%;
+  margin-right: 40%;
+  display: block;
+}
+
+#Specification{
+  border-radius: 10px;
+  background: rgba(211,211,211,0.5);
+  width: 20%;
+  float:right;
+  margin-left: 60%;
+  margin-right: 40%;
+  display: block;
+}
