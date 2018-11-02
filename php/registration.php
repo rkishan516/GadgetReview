@@ -11,7 +11,7 @@
   $num = mysqli_num_rows($result);
 
   if($num==1){
-    echo "Username Already Taken";
+    echo "<script>alert('Username Already Taken')</script>";
   }else{
     $sql = "insert into users(user,pass) values('$name','$pass')";
     mysqli_query($conn,$sql);
@@ -26,7 +26,7 @@
     )";
 
     if (mysqli_query($conn, $sql)) {
-      echo "Table MyGuests created successfully";
+      echo "<script>alert('Table created successfully')</script>";
     } else {
       echo "Error creating table: " . mysqli_error($conn);
     }

@@ -18,15 +18,13 @@
         <div class="menu">
           <ul>
             <li></li>
-            <li><a onclick="showReviewCreator()" href="#" class="menu-item">New Review</a></li>
-            <li><a onclick="editReview()" href="#" class="menu-item">Edit Review</a></li>
-            <li><a onclick="deleteReview()" href="#" class="menu-item">Delete Review</a></li>
+            <li><h1>Delete Review</h1></li>
             <li><a href="logout.php" class="menu-item">Log Out</a></li>
           </ul>
         </div>
       </nav>
       <div id="vcontainer" >
-        <form method="POST" action="reviewer.php">
+        <form method="POST" action="deleteConfirm.php">
             Device Name : <select id="cd" name="cd">
                 <?php
                 $conn=mysql_connect(localhost, 'root', '');
@@ -35,7 +33,7 @@
 
                 while ($row=mysql_fetch_array($res)) {
                     $Title=$row["DeviceName"];
-                    echo "<option> $Title </option>";
+                    echo "<option name='$Title'> $Title </option>";
                 }
                 ?>
             </select><br>

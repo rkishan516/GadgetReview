@@ -19,7 +19,7 @@
           <ul>
             <li></li>
              <li><a onclick="showReviewCreator()" href="#" class="menu-item">New Review</a></li>
-             <li><a onclick="editReview()" href="#" class="menu-item">Edit Review</a></li>
+             <li><a href="editReview.php" class="menu-item">Edit Review</a></li>
              <li><a href="deleteReview.php" class="menu-item">Delete Review</a></li>
             <li><a href="logout.php" class="menu-item">Log Out</a></li>
           </ul>

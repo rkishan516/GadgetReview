@@ -20,7 +20,8 @@ function showReviewCreator(){
 function editReview(){
   var c1=document.getElementById("vcontainer");
   c1.innerHTML="";
-  c1.innerHTML= c1.innerHTML +'<form action="newReview.php" method="post">'
+  c1.innerHTML= c1.innerHTML //+ 'Device Name : <select id="cd" name="cd" onchange="editReview2()"><?php $conn=mysql_connect(localhost, 'root', ''); mysql_select_db('login', $conn); $res=mysql_query("SELECT DeviceName FROM admin"); while ($row=mysql_fetch_array($res)) { $Title=$row["DeviceName"]; echo "<option name='$Title'> $Title </option>";} ?></select><br>'
+                             +'<form action="newReview.php" method="post">'
                              +'Device Name :<input type="text" name="dev_name" id="dev_name" required/></br>'
                              +'Image : <input type="file" name="ImageName" id="ImageName" required/></br>'
                              +'Pros : <input type="text" name="Pros1" id="Pros" required/>'
@@ -34,16 +35,6 @@ function editReview(){
                              +'</form>'
 }
 
-function deleteReview(){
-  var c1=document.getElementById("vcontainer");
-  c1.innerHTML="";
-  c1.innerHTML= c1.innerHTML +'<form action="deleteReview.php" method="post">'
-                             +'Device Name :'
-                             +'<select id="cd" name="cd">'
-                             +'</select>'
-                             +'<input type="submit" value="submit" name="submit"/>'
-                             +'</form>'
-}
 function addpros(){
   var c1=document.getElementById("pros");
   c1.innerHTML = c1.innerHTML + '<input type="text" name="Pros'+i+'" id="Pros" required/>';
