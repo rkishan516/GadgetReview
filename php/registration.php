@@ -22,6 +22,10 @@
     Pros VARCHAR(1000) NOT NULL,
     Cons VARCHAR(1000) NOT NULL,
     Specification VARCHAR(10000) NOT NULL,
+    OvRat INT(3) NOT NULL,
+    PerRat INT(3) NOT NULL,
+    DesRat INT(3) NOT NULL,
+    SatRat INT(3) NOT NULL,
         PRIMARY KEY(DeviceName)
     )";
 

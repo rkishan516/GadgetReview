@@ -27,9 +27,10 @@
         <form method="POST" action="deleteConfirm.php">
             Device Name : <select id="cd" name="cd">
                 <?php
+                $user = $_SESSION['user'];
                 $conn=mysql_connect(localhost, 'root', '');
                 mysql_select_db('login', $conn);
-                $res=mysql_query("SELECT DeviceName FROM admin");
+                $res=mysql_query("SELECT DeviceName FROM $user");
 
                 while ($row=mysql_fetch_array($res)) {
                     $Title=$row["DeviceName"];

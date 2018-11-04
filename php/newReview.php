@@ -1,25 +1,25 @@
 <?php
   session_start();
 
-          var_dump($_FILES);
           $dev_name = $_POST['dev_name'];
-          $img_name = $_POST['ImageName'];
+          $img_name = basename($_FILES["ImageName"]["name"]);
           $spec = $_POST['Specification'];
+          $or = $_POST['OR'];
+          $pr = $_POST['PR'];
+          $dr = $_POST['DR'];
+          $sr = $_POST['SR'];
           $conn = mysqli_connect('localhost','root','','login');
-          $pros = "";
-          $cons = "";
-          $i=1;
-          //while($_POST['Pros'.$i]!=NULL){
-            $pros = $pros.$_POST['Pros'.$i];
-            //$i++;
-          //}
-          //$i=1;
-          //while($_POST['Cons'.$i]!=NULL){
-            $cons = $cons.$_POST['Cons'.$i];
-            //$i++;
-          //}
-
-          $sql = "INSERT INTO $_SESSION[user] (DeviceName, ImageName, Pros, Cons, Specification) VALUES ('$dev_name','$img_name','$pros','$cons','$spec')";
+          $pros = $_POST['Pros1'];
+          $cons = $_POST['Cons1'];
+          $path = "../Images/";
+          $path = $path.basename($_FILES["ImageName"]["name"]);
+          if(move_uploaded_file($_FILES['ImageName']['tmp_name'], $path)) {
+                echo "The file ".  basename( $_FILES['ImageName']['name']).
+                " has been uploaded";
+          }else{
+                echo "Your file was unable to upload.  Please try again!";
+            }
+          $sql = "INSERT INTO $_SESSION[user] (DeviceName, ImageName, Pros, Cons, Specification,OvRat,PerRat,DesRat,SatRat) VALUES ('$dev_name','$img_name','$pros','$cons','$spec',$or,$pr,$dr,$sr)";
 
           if ($conn->query($sql) === TRUE) {
               echo "New review created successfully";
