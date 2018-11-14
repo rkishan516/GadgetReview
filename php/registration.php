@@ -1,6 +1,5 @@
 <?php
   session_start();
-  header('location: reviewer.php');
   $conn = mysqli_connect('localhost','root','','login');
   $_SESSION['user'] = $name = $_POST['user'];
   $_SESSION['password'] = $pass = $_POST['password'];
@@ -11,7 +10,8 @@
   $num = mysqli_num_rows($result);
 
   if($num==1){
-    echo "<script>alert('Username Already Taken')</script>";
+    echo "<script type='text/javascript'>alert('Username Already Taken')</script>";
+    echo "<script type='text/javascript'> window.location.replace(\"index.php\") </script>";
   }else{
     $sql = "insert into users(user,pass) values('$name','$pass')";
     mysqli_query($conn,$sql);
@@ -30,12 +30,12 @@
     )";
 
     if (mysqli_query($conn, $sql)) {
-      echo "<script>alert('Table created successfully')</script>";
     } else {
       echo "Error creating table: " . mysqli_error($conn);
     }
 
-    echo "<script> alert('Registration Successful'); </script>";
+    echo "<script type='text/javascript'>alert('Welcome To The World Of gadgetReview!')</script>";
+    echo "<script type='text/javascript'> window.location.replace(\"reviewer.php\") </script>";
   }
 
 ?>

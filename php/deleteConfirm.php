@@ -19,10 +19,11 @@
   }
   $conn = $conn=mysqli_connect('localhost', 'root', '','login');
   if ($conn->query($sql) === TRUE) {
-      echo "Record Deleted successfully";
+      echo "<script type='text/javascript'>alert('Record Deleted Successfully!')</script>";
   } else {
+      echo "<script type='text/javascript'>alert('Error ,Something Went Wrong!')</script>";
       echo "Error: " . $sql . "<br>" . $conn->error;
   }
   mysqli_close($conn);
-  header('location: reviewer.php');
+    echo "<script type='text/javascript'> window.location.replace(\"reviewer.php\") </script>";
 ?>

@@ -39,6 +39,7 @@
           </select><br>
           <input type="submit" value="Fetch Data" formaction="editReview.php"/>
           <?php
+              error_reporting(E_ERROR | E_WARNING | E_PARSE);
               $conn=mysql_connect('localhost', 'root', '');
               mysql_select_db('login', $conn);
               $cd = $_POST['cd'];
@@ -47,12 +48,11 @@
               $res = mysql_query($sql);
               while ($row=mysql_fetch_array($res)) {
                   $Title=$row["ImageName"];
-                  echo "<br><br><br><center><img src='../Images/$Title' id='ImageName' width='100px' height='200px' alt='Image Not Found' draggable='true' dropzone='copy' style='float:center' /></center>";
+                  echo "<br><br><br><center><img src='../Images/$Title' id='ImageName1'alt='Image Not Found' /></center>";
               }
            ?>
            <?php echo 'Image : <input type="file" name="ImageName" id="ImageName"/></br>'; ?>
           <?php
-              echo "Pros : ";
               $conn=mysql_connect('localhost', 'root', '');
               mysql_select_db('login', $conn);
               $cd = $_POST['cd'];
@@ -61,11 +61,10 @@
               $res = mysql_query($sql);
               while ($row=mysql_fetch_array($res)) {
                   $Title=$row["Pros"];
-                  echo "<input type='text' name='Pros' id='Pros' value='$Title' required/>(Multiple Pros Seprated By Comma)<br>";
+                  echo "Pros : </br>(Multiple Pros Seprated By Comma)<br><input type='text' name='Pros' id='Pros' value='$Title' required/><br>";
               }
            ?>
           <?php
-              echo "Cons : ";
               $conn=mysql_connect('localhost', 'root', '');
               mysql_select_db('login', $conn);
               $cd = $_POST['cd'];
@@ -74,11 +73,10 @@
               $res = mysql_query($sql);
               while ($row=mysql_fetch_array($res)) {
                   $Title=$row["Cons"];
-                  echo "<input type='text' name='Cons' id='Cons' value='$Title' required/>(Multiple Cons Seprated By Comma)<br>";
+                  echo "Cons : </br>(Multiple Cons Seprated By Comma)<br><input type='text' name='Cons' id='Cons' value='$Title' required/><br>";
               }
            ?>
           <?php
-              echo "Specification :";
               $conn=mysql_connect('localhost', 'root', '');
               mysql_select_db('login', $conn);
               $cd = $_POST['cd'];
@@ -87,11 +85,10 @@
               $res = mysql_query($sql);
               while ($row=mysql_fetch_array($res)) {
                   $Title=$row["Specification"];
-                  echo "<input type='text' name='Specification' id='Specification' value='$Title' required/></br>";
+                  echo "Specification : <br><input type='text' name='Specification' id='Specification' value='$Title' required/></br>";
               }
            ?>
            <?php
-               echo "Overall Rating :";
                $conn=mysql_connect('localhost', 'root', '');
                mysql_select_db('login', $conn);
                $cd = $_POST['cd'];
@@ -100,11 +97,10 @@
                $res = mysql_query($sql);
                while ($row=mysql_fetch_array($res)) {
                    $Title=$row["OvRat"];
-                   echo "<input type='number' name='OR' id='OR' max='100' min='0' value='$Title' required/></br>";
+                   echo "Overall Rating : <br><input type='number' name='OR' id='OR' max='100' min='0' value='$Title' required/></br>";
                }
             ?>
             <?php
-                echo "Performance Rating :";
                 $conn=mysql_connect('localhost', 'root', '');
                 mysql_select_db('login', $conn);
                 $cd = $_POST['cd'];
@@ -113,11 +109,10 @@
                 $res = mysql_query($sql);
                 while ($row=mysql_fetch_array($res)) {
                     $Title=$row["PerRat"];
-                    echo "<input type='number' name='PR' id='PR' max='100' min='0' value='$Title' required/></br>";
+                    echo "Performance Rating : <br><input type='number' name='PR' id='PR' max='100' min='0' value='$Title' required/></br>";
                 }
              ?>
              <?php
-                 echo "Design Rating :";
                  $conn=mysql_connect('localhost', 'root', '');
                  mysql_select_db('login', $conn);
                  $cd = $_POST['cd'];
@@ -126,11 +121,10 @@
                  $res = mysql_query($sql);
                  while ($row=mysql_fetch_array($res)) {
                      $Title=$row["DesRat"];
-                     echo "<input type='number' name='DR' id='DR' max='100' min='0' value='$Title' required/></br>";
+                     echo "Design Rating : <br><input type='number' name='DR' id='DR' max='100' min='0' value='$Title' required/></br>";
                  }
               ?>
               <?php
-                  echo "Stability Rating :";
                   $conn=mysql_connect('localhost', 'root', '');
                   mysql_select_db('login', $conn);
                   $cd = $_POST['cd'];
@@ -139,7 +133,7 @@
                   $res = mysql_query($sql);
                   while ($row=mysql_fetch_array($res)) {
                       $Title=$row["SatRat"];
-                      echo "<input type='number' name='SR' id='SR' max='100' min='0' value='$Title' required/></br>";
+                      echo "Stability Rating : <br><input type='number' name='SR' id='SR' max='100' min='0' value='$Title' required/></br>";
                   }
                ?>
           <br><br><br><input type="submit" value="submit" name="submit"/>

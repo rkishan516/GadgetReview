@@ -22,10 +22,10 @@
           $sql = "INSERT INTO $_SESSION[user] (DeviceName, ImageName, Pros, Cons, Specification,OvRat,PerRat,DesRat,SatRat) VALUES ('$dev_name','$img_name','$pros','$cons','$spec',$or,$pr,$dr,$sr)";
 
           if ($conn->query($sql) === TRUE) {
-              echo "New review created successfully";
-              header('location: reviewer.php');
+              echo "<script type='text/javascript'>alert('New review created successfully!')</script>";
           } else {
+              echo "<script type='text/javascript'>alert('Error ,Something Went Wrong!')</script>";
               echo "Error: " . $sql . "<br>" . $conn->error;
-              header('location: reviewer.php');
           }
+          echo "<script type='text/javascript'> window.location.replace(\"reviewer.php\") </script>";
 ?>

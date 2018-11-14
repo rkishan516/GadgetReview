@@ -12,7 +12,8 @@
   if($num==1){
     header('location: reviewer.php');
   }else{
-    header('location: index.php');
+    echo "<script type='text/javascript'>alert('Error ,User Not Found with Given Password!')</script>";
+    echo "<script type='text/javascript'> window.location.replace(\"index.php\") </script>";
   }
 
 ?>
